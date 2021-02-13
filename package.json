@@ -1,7 +1,7 @@
 {
   "name": "jonalarm_blog",
   "private": true,
-  "description": "A simple blog where I write stuff about math and tech",
+  "description": "Math, ML, and coding projects to show off",
   "version": "2.0.0",
   "author": "Jon Lamar <jonathan.p.lamar@gmail.com>",
   "dependencies": {

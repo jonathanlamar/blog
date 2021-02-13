@@ -2,18 +2,10 @@ module.exports = {
   siteMetadata: {
     title: `Jon Lamar`,
     description: `Math, ML, and coding projects to show off`,
-    author: `Jon`,
+    author: `Jon Lamar`,
     siteUrl: `https://www.jonalarm.com`,
   },
   plugins: [
-    {
-      resolve: "gatsby-plugin-verify-brave",
-      options: {
-        token:
-          "8ad58b5ea5f143eb909c990d56012938371dcbccc434f51d71d62bd3df452e8e",
-        domain: "chrisatmachine.com",
-      },
-    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -42,7 +34,7 @@ module.exports = {
         background_color: `#1e2127`,
         theme_color: `#1e2127`,
         display: `minimal-ui`,
-        icon: `src/images/cam-logo.png`, // This path is relative to the root of the site.
+        icon: `src/images/abacus.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-less`,
