@@ -65,7 +65,13 @@ const IndexPage = () => {
       <div className={style.card}>
         <div className={style.post}>
           <div className={style.cover}>
-            <a href={`jonLamarResume.docx`} download>
+            <a
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              href={
+                "https://drive.google.com/file/d/1vcuV6Kx7vCAX0oF_5KJiQDE5Bhxjfbzb/view?usp=sharing"
+              }
+            >
               <img src={Resume} height="150px" width="225px" alt="blog" />
             </a>
           </div>
