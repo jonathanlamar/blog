@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import style from "./layout.module.less"
-import Header from "./header"
+import AppHeader from "./header"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
 
   return (
     <div>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <AppHeader siteTitle={data.site.siteMetadata.title} />
       <div className={style.container} id="content">
         <main>{children}</main>
       </div>

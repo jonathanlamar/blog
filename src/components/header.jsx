@@ -1,14 +1,9 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
-import {
-  FaGithub,
-  FaLinkedin,
-  FaBars,
-  FaTimes,
-} from "react-icons/fa"
+import { FaGithub, FaLinkedin, FaBars, FaTimes } from "react-icons/fa"
 import style from "./header.module.less"
 
-const Header = () => {
+const AppHeader = () => {
   const [isMenuCollapsed, setMenuCollapsed] = useState(true)
 
   function toggleMenu() {
@@ -20,9 +15,7 @@ const Header = () => {
       <div className={style.titleContainer}>
         <div className={style.title}>
           <Link to={"/"}>
-            <h4>
-              Jon Lamar
-            </h4>
+            <h4>Jon Lamar</h4>
           </Link>
         </div>
         <div className={style.menuButton}>
@@ -75,4 +68,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default AppHeader
