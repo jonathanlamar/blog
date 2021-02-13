@@ -6,10 +6,7 @@ import Me from "../images/me.jpg"
 import ThisBlog from "../images/this-blog.png"
 import Resume from "../images/resume.png"
 import style from "./index.module.less"
-import {
-  FaGithub,
-  FaLinkedin,
-} from "react-icons/fa"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 const IndexPage = () => {
   return (
@@ -35,9 +32,10 @@ const IndexPage = () => {
           </div>
           <div className={style.content}>
             <span>
-              My name is Jon.  I am a software engineer and occasional data scientist.
-              I did my PhD in math and try to keep at the cutting edge of mathy tech.
-              This blog has some notes and examples of things I find intersting.
+              My name is Jon. I am a software engineer and occasional data
+              scientist. I did my PhD in math and try to keep at the cutting
+              edge of mathy tech. This blog has some notes and examples of
+              things I find intersting.
             </span>
             <div className={style.list}>
               <ul>
@@ -67,16 +65,15 @@ const IndexPage = () => {
       <div className={style.card}>
         <div className={style.post}>
           <div className={style.cover}>
-            <a
-              target="_blank"
-              rel="nofollow noopener noreferrer"
-              href={"https://www.jonalarm.com/files/jonLamarResume.pdf"}
-            >
+            <a href={"files/jonLamarResume.pdf"} download>
               <img src={Resume} height="150px" width="225px" alt="blog" />
             </a>
           </div>
           <div className={style.content}>
-            <span>Here is my resume if you are interested in my background or want to hire me.</span>
+            <span>
+              Here is my resume if you are interested in my background or want
+              to hire me.
+            </span>
           </div>
         </div>
       </div>
@@ -92,7 +89,15 @@ const IndexPage = () => {
             </a>
           </div>
           <div className={style.content}>
-            <span>was forked from <b><a href="https://github.com/ChristianChiarulli/blog">Christian Chiarulli</a></b>.</span>
+            <span>
+              was forked from{" "}
+              <b>
+                <a href="https://github.com/ChristianChiarulli/blog">
+                  Christian Chiarulli
+                </a>
+              </b>
+              .
+            </span>
           </div>
         </div>
       </div>
