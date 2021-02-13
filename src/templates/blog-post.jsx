@@ -20,14 +20,15 @@ function BlogPost(props) {
         import("gitalk/dist/gitalk-component")
       )
 
+      // TODO
       return (
         <GitalkComponent
           options={{
-            clientID: "fbe3eb4cb8351d49fb9c",
-            clientSecret: "7d0c29add206d5bc85fc78f27237b49b08e602d0",
+            clientID: "",
+            clientSecret: "",
             repo: "blog_comments",
-            owner: "ChristianChiarulli",
-            admin: ["ChristianChiarulli"],
+            owner: "jonathanlamar",
+            admin: ["jonathanlamar"],
             id: id,
             title: title,
             distractionFreeMode: false,

@@ -66,7 +66,7 @@ function SEO({ description, lang, meta, title }) {
       <title>{site.siteMetadata.title}</title>
       <meta
         name="google-site-verification"
-        content="8XINwkJ1ddUZTNLbqRwI0wqBIg6cwpTklXzLjQ6H4Bk"
+        content=""
       />
     </Helmet>
   )

@@ -6,7 +6,7 @@ import style from "./contact.module.less"
 function Donate() {
   return (
     <Layout>
-      <SEO title="Resume" keywords={["chris@machine"]} />
+      <SEO title="Resume" keywords={["jonalarm"]} />
       <h1 style={{ textAlign: "center" }}>Resume</h1>
       <div className={style.container}></div>
     </Layout>

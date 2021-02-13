@@ -1,10 +1,13 @@
 # Tech Blog 🚀
 
-## Install Node
+This blog was forked from
+[here](https://github.com/ChristianChiarulli/blog.git). I am only doing my best
+to customize it and understand the project structure (I am **not** a web
+developer).
 
-I recommend installing node using fnm, I have a [blog post](https://www.chiarulli.me/Nodejs/02-Install-FNM/) on how to do that
+## Installation
 
-## Install gatsby-cli
+### Install gatsby-cli
 
 ```
 npm i -g gatsby-cli
@@ -13,7 +16,7 @@ npm i -g gatsby-cli
 ## Clone the repo
 
 ```
-git clone https://github.com/ChristianChiarulli/blog.git
+git clone https://github.com/jonathanlamar/blog
 ```
 
 ## Install dependencies
@@ -29,12 +32,8 @@ npm i
 ```
 cd blog
 
-gatsby develop
+npm start
 ```
-
-## Hosting
-
-I use AWS Amplify to host the blog
 
 ## Content
 
