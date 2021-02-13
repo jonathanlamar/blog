@@ -66,7 +66,7 @@ tags: ["stats"]
 1. In general, a test has the form $$\psi_{n,\alpha} =
    \mathbf{1}\{T_n>C_\alpha\},$$ where $T_n$ is called the _test statistic_,
    which in our current examples, will take the form $$ T*n =
-   \sqrt{n}(f(\Bar{X_n}) - \theta_0),$$ where $f(\bar{X_n})$ is an estimator for
+   \sqrt{n}(f(\overline{X_n}) - \theta_0),$$ where $f(\bar{X_n})$ is an estimator for
    $\theta_0$, and which converges in distribution to something familiar (so far
    in our examples, this is usually $N(0,\sigma^2)$). What this means is that
    by choosing $C*\alpha$, we can decide the asymptotic level $\alpha$. Thus,
