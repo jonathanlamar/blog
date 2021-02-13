@@ -65,7 +65,7 @@ const IndexPage = () => {
       <div className={style.card}>
         <div className={style.post}>
           <div className={style.cover}>
-            <a href={"files/jonLamarResume.pdf"} download>
+            <a href={`jonLamarResume.docx`} download>
               <img src={Resume} height="150px" width="225px" alt="blog" />
             </a>
           </div>
