@@ -1,9 +1,9 @@
 ---
 title: Stats 4 - Hypothesis Testing II
-date: 2021-02-12
+date: 2019-10-04
 image: stats.png
 author: Jon
-tags: ["stats"]
+tags: ["stats", "hypothesis testing"]
 ---
 
 The other hypothesis testing doc covered some extreme basics, and left a lot of
@@ -21,13 +21,19 @@ test group measured drop in cholesterol and let $Y_1,\ldots, Y_m$ be the control
 group measured drop in cholesterol. Then $X_1,\ldots,X_n$ are _iid_
 $N(\Delta_d, \sigma_d^2)$ and $Y_1,\ldots,Y_m$ are _iid_ $N(\Delta_c,
 \sigma_c^2)$, and our null hypothesis is that $\Delta_d \geq \Delta_c$. Using
-Slutskey's Lemma and CLT, we have $$ \frac{\bar{X*n} - \bar{Y_m} - (\Delta_d -
-\Delta_c)}{\sqrt{\frac{\hat{\sigma}^2_d}{n} + \frac{\hat{\sigma}^2_c}{m}}}
-\overset{(d)}{\to} N(0,1). $$ \_However\*, this requires both sample sizes to go
-to infinity, and convergence will be extremely slow if they do not do so at the
-same rate. Since we rarely have a linear relationship between control and test
-group sizes (for ethical reasons), asymptotic hypothesis tests of the previous
-document will not be very useful.
+Slutskey's Lemma and CLT, we have
+
+$$
+\frac{\overline{X_n} - \overline{Y_m} -
+(\Delta_d - \Delta_c)}{\sqrt{\frac{\hat{\sigma}^2_d}{n} +
+\frac{\hat{\sigma}^2_c}{m}}} \overset{(d)}{\to} N(0,1).
+$$
+
+_However_, this requires both sample sizes to go to infinity, and convergence
+will be extremely slow if they do not do so at the same rate. Since we rarely
+have a linear relationship between control and test group sizes (for ethical
+reasons), asymptotic hypothesis tests of the previous document will not be very
+useful.
 
 ### Small Sample Sizes
 
@@ -35,11 +41,20 @@ Essentially, the above limit was a statement of the form...
 
 ### The $\chi^2$ and $t$ Distributions
 
-Set the following notation. Let $$ S*n = \frac{1}{n}\sum*{i=1}^n(X*i -
-\bar{X}\_n)^2 $$ be the sample variance of a sample of $n$ independent Gaussian
-random variables with variance $\sigma^2$, and let $$ \tilde{S}\_n =
-\frac{1}{n-1}\sum*{i=1}^n(X_i - \bar{X}\_n)^2 = \frac{n}{n-1}S_n $$ be the
-unbiased estimator of sample variance.
+Set the following notation. Let
+
+$$
+S_n = \frac{1}{n}\sum_{i=1}^n(X_i - \overline{X_n})^2
+$$
+
+be the sample variance of a sample of $n$ independent Gaussian random variables
+with variance $\sigma^2$, and let
+
+$$
+\tilde{S}_n = \frac{1}{n-1}\sum_{i=1}^n(X_i - \overline{X_n})^2 = \frac{n}{n-1}S_n
+$$
+
+be the unbiased estimator of sample variance.
 
 #### The $\chi^2$ Distributions
 
@@ -60,14 +75,20 @@ Let $V \sim \chi^2_d$. Then
 
 **Theorem:**
 
-1. $\bar{X}_n$ is independent of $S_n$.
+1. $\overline{X_n}$ is independent of $S_n$.
 2. $\frac{nS_n}{\sigma^2} \sim\chi^2_{n-1}$
 
 #### The Student's $t$-Distribution
 
 Let $Z$ be standard normal, let $V$ be $\chi^2_d$, and assume $Z$ and $V$ are
-independent. Then the random variable $$ t = \frac{Z}{\sqrt{V/d}} $$ has as its
-distribution the _Student's $t$ distribution with $d$ degrees of freedom_.
+independent. Then the random variable
+
+$$
+t = \frac{Z}{\sqrt{V/d}}
+$$
+
+has as its distribution the _Student's $t$ distribution with $d$ degrees of
+freedom_.
 
 ### The Student's $t$ Test
 
@@ -85,32 +106,48 @@ assume that our data are Gaussian.
 2. The null hypothesis is that $\mu=0$, and the alternate hypothesis is either
    that $\mu\neq 0$ (for the two-sided test), or $\mu\geq 0$ (for the one-sided
    test).
-3. The test statistic is $$ T_n := \frac{\bar{X}\_n}{\sqrt{\tilde{S}\_n/n}}. $$
+3. The test statistic is
 
-Note that under the null, we have $$ T*n = \frac{\sqrt{n}\frac{\bar{X}\_n -
-\mu_0}{\sigma}}{\sqrt{\tilde{S}\_n/\sigma^2}} \sim \frac{Z}{\sqrt{V}}, $$ where
-$Z\sim N(0,1)$ and $V\sim\chi^2*{n-1}/(n-1)$ (by Cochrane's Theorem). Thus, the
-test statistic follows a $t$ distribution with $n-1$ degrees of freedom and
-therefore its quantiles are known.
+   $$
+   T_n := \frac{\overline{X_n}}{\sqrt{\tilde{S}_n/n}}.
+   $$
+
+Note that under the null, we have
+
+$$
+T_n = \frac{\sqrt{n}\frac{\overline{X_n} - \mu_0}{\sigma}}{\sqrt{\tilde{S}_n/\sigma^2}}
+\sim \frac{Z}{\sqrt{V}},
+$$
+
+where $Z\sim N(0,1)$ and $V\sim\chi^2*{n-1}/(n-1)$ (by Cochrane's Theorem).
+Thus, the test statistic follows a $t$ distribution with $n-1$ degrees of
+freedom and therefore its quantiles are known.
 
 #### The Two Sample Welch's $t$-Test
 
 Returning to out cholesterol example, we can consider the scenario of testing
 for the difference of means of two samples using a $t$ distribution. As our
 null hypothesis is that $\Delta_d \geq \Delta_c$, or equivalently that
-$\Delta_d - \Delta_c \geq 0$, we have a test statistic of the form $$ T*{m,n} =
-\frac{\bar{X}\_n - \bar{Y}\_n}{\sqrt{\frac{\hat{\sigma}^2_d}{n} +
-\frac{\hat{\sigma}^2_c}{m}}}. $$ Thus, this is a one-sided example of the
-\_Welch $t$-test\*. This is opposed to the Student's $t$-test, where the test
-statistic follows a $t$ distribution. In this case, the test statistic is
-approximately a $t$-distribution, particularly because the denominator
-involves something that is _approximately_ (and very nearly so) a $\chi^2$
-distribution.
+$\Delta_d - \Delta_c \geq 0$, we have a test statistic of the form
 
-**Theorem (Welch-Satterthwaite):** We have $T_{m,n} \approx t_N$, where $$ N =
-\frac{(\hat{\sigma}^2_d/n +
+$$
+T_{m,n} = \frac{\overline{X_n} - \overline{Y_n}}{\sqrt{\frac{\hat{\sigma}^2_d}{n} +
+\frac{\hat{\sigma}^2_c}{m}}}.
+$$
+
+Thus, this is a one-sided example of the _Welch $t$-test_. This is opposed to
+the Student's $t$-test, where the test statistic follows a $t$ distribution. In
+this case, the test statistic is approximately a $t$-distribution, particularly
+because the denominator involves something that is _approximately_ (and very
+nearly so) a $\chi^2$ distribution.
+
+**Theorem (Welch-Satterthwaite):** We have $T_{m,n} \approx t_N$, where
+
+$$
+N = \frac{(\hat{\sigma}^2_d/n +
 \hat{\sigma}^2_c/m)^2}{\frac{\hat{\sigma}^4_d}{n^2(n-1)} +
-\frac{\hat{\sigma}^4_c}{m^2(m-1)}}\geq \min(n,m). $$
+\frac{\hat{\sigma}^4_c}{m^2(m-1)}}\geq \min(n,m).
+$$
 
 **Remark:** If the variances are known to be equal, the test statistic becomes
 exactly a $t$ distribution, hence the test becomes a two sample Student's
@@ -176,15 +213,3 @@ $$
 
 **Definition:** _Wald's Test for Implicit Hypotheses_ is any test (one or two
 sided) based on the above test statistic for some function $g$.
-
-### Likelihood Ratio Test
-
-TODO
-
-## Goodness of Fit Tests
-
-### $\chi^2$ Test
-
-TODO
-
-TODO: Others here I barely remember from lecture.
