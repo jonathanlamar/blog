@@ -1,10 +1,15 @@
 ---
 title: Stats 1 - Basic concepts
-date: 2019-10-01
+date: 2021-02-13
 image: stats.png
 author: Jon
-tags: ["stats", "real analysis"]
+tags: ["stats"]
 ---
+
+This begins a series of notes that I took while studying for a stats class in
+2019 on edX [here](https://learning.edx.org/course/course-v1:MITx+18.6501x+3T2019/home).
+These notes were incomplete, so take everything with a grain of salt. I was
+simply trying to understand hypothesis testing from a theoretical point of view.
 
 ## Modes of Convergence
 

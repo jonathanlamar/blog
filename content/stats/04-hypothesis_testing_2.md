@@ -1,9 +1,9 @@
 ---
 title: Stats 4 - Hypothesis Testing II
-date: 2019-10-04
+date: 2021-02-13
 image: stats.png
 author: Jon
-tags: ["stats", "hypothesis testing"]
+tags: ["stats"]
 ---
 
 The other hypothesis testing doc covered some extreme basics, and left a lot of

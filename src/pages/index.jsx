@@ -96,11 +96,11 @@ const IndexPage = () => {
           </div>
           <div className={style.content}>
             <span>
-              was forked from{" "}
+              was forked from a tech youtuber named Christian Chiarulli. His
+              original version of the blog can be found
               <b>
-                <a href="https://github.com/ChristianChiarulli/blog">
-                  Christian Chiarulli
-                </a>
+                {" "}
+                <a href="https://github.com/ChristianChiarulli/blog">here</a>
               </b>
               .
             </span>

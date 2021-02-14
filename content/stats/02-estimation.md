@@ -1,9 +1,9 @@
 ---
 title: Stats 2 - Parameter Estimation
-date: 2019-10-02
+date: 2021-02-13
 image: stats.png
 author: Jon
-tags: ["stats", "real analysis"]
+tags: ["stats"]
 ---
 
 ## Distances Between Distributions

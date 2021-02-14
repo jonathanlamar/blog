@@ -20,13 +20,15 @@ function BlogPost(props) {
         import("gitalk/dist/gitalk-component")
       )
 
-      // TODO
+      console.log(process.env.COMMENT_CLIENT_ID)
+      console.log(process.env.COMMENT_CLIENT_SECRET)
+
       return (
         <GitalkComponent
           options={{
-            clientID: "",
-            clientSecret: "",
-            repo: "blog_comments",
+            clientID: process.env.COMMENT_CLIENT_ID,
+            clientSecret: process.env.COMMENT_CLIENT_SECRET,
+            repo: "blog-comments",
             owner: "jonathanlamar",
             admin: ["jonathanlamar"],
             id: id,

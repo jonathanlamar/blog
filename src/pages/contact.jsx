@@ -5,12 +5,17 @@ import ContactForm from "../components/contact-form"
 import style from "./contact.module.less"
 
 function Contact() {
+  const flexyFormId = process.env.FLEXYFORM
+  console.log(flexyFormId)
+
   return (
     <Layout>
       <SEO title="Contact" keywords={["jonalarm"]} />
       <h1 style={{ textAlign: "center" }}>Contact</h1>
       <div className={style.container}>
-        <ContactForm action="https://www.flexyform.com/f/37a7cc37428cb5c70aef9a04aff51535e35268fc "></ContactForm>
+        <ContactForm
+          action={`https://www.flexyform.com/f/${flexyFormId}`}
+        ></ContactForm>
       </div>
     </Layout>
   )
