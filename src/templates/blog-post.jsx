@@ -70,7 +70,8 @@ function BlogPost(props) {
         {/* <Share title={title} url={url} pathname={props.location.pathname} /> */}
         <PostPager prev={prev && prev.node} next={next && next.node} />
       </div>
-      <div style={{ marginTop: "6em", paddingBottom: "6em" }}>{comments()}</div>
+      {/* TODO: Fix the comments component. */}
+      {/* <div style={{ marginTop: "6em", paddingBottom: "6em" }}>{comments()}</div> */}
     </Layout>
   )
 }
@@ -91,8 +92,9 @@ export const query = graphql`
             resize(width: 1000, height: 420) {
               src
             }
-            fluid(maxWidth: 786) {
+            fluid(maxWidth: 768) {
               ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }

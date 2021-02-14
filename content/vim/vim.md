@@ -188,7 +188,7 @@ Run this command.
 
 **WARNING:** If you already have a vim config, you should back it up first.
 
-```bash
+```
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
