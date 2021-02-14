@@ -75,5 +75,16 @@ module.exports = {
       },
     },
     `gatsby-plugin-feed`,
+    {
+      resolve: `gatsby-plugin-env-variables`,
+      options: {
+        allowList: [
+          "COMMENT_CLIENT_ID",
+          "COMMENT_CLIENT_SECRET",
+          "FLEXYFORM",
+          "GOOGLE_SITE_VERIFICATION",
+        ],
+      },
+    },
   ],
 }
