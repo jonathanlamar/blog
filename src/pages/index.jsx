@@ -4,7 +4,7 @@ import SEO from "../components/seo"
 import { Link } from "gatsby"
 import Me from "../images/me.jpg"
 import ThisBlog from "../images/this-blog.png"
-import Resume from "../images/resume.png"
+import Resume from "../images/resume.jpg"
 import style from "./index.module.less"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 

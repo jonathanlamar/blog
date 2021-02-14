@@ -20,9 +20,7 @@ function BlogPost(props) {
         import("gitalk/dist/gitalk-component")
       )
 
-      console.log(process.env.COMMENT_CLIENT_ID)
-      console.log(process.env.COMMENT_CLIENT_SECRET)
-
+      // TODO: This is broken.
       return (
         <GitalkComponent
           options={{

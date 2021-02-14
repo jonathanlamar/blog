@@ -34,7 +34,7 @@ module.exports = {
         background_color: `#1e2127`,
         theme_color: `#1e2127`,
         display: `minimal-ui`,
-        icon: `src/images/abacus.png`, // This path is relative to the root of the site.
+        icon: `src/images/rtimes.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-less`,
@@ -60,15 +60,6 @@ module.exports = {
             options: {
               width: 800,
               height: 400,
-            },
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 590,
             },
           },
         ],
