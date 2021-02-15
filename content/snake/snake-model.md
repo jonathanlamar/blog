@@ -3,7 +3,7 @@ title: Snake Genetic Model
 date: 2021-02-14
 image: snake.png
 author: Jon
-tags: ["neural networks", "machine learning"]
+tags: ["ML"]
 ---
 
 ## Overview
