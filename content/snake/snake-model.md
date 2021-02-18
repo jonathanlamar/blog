@@ -8,7 +8,7 @@ tags: ["machine learning", "python"]
 
 ## Overview
 
-I wanted to build a neual network to play snake. My original idea was to use
+I wanted to build a nerual network to play snake. My original idea was to use
 reinforcement learning, but I found a genetic solution and it seemed pretty
 simple to recreate.
 

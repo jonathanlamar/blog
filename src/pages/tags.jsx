@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import style from "./tags.module.less"
+import { slugify } from "../../utils/Utilities"
 
 function TagsPage(props) {
   const data = props.data.allMarkdownRemark.group
@@ -13,7 +14,10 @@ function TagsPage(props) {
       <h1 style={{ textAlign: "center" }}>All Topics</h1>
       <div className={style.container}>
         {data.map(tag => (
-          <Link to={`/${tag.fieldValue}`} className=" my-1 card text-center">
+          <Link
+            to={`/${slugify(tag.fieldValue)}`}
+            className=" my-1 card text-center"
+          >
             <h2>
               {tag.fieldValue} {`(${tag.totalCount})`}
             </h2>

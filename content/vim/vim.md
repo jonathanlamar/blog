@@ -7,7 +7,9 @@ tags: ["vim"]
 ---
 
 These are notes for a presentation that I gave to coworkers at Charter on the
-history of vim and how to configure it for development.
+history of vim and how to configure it for development. I included some example
+vim configs in the original presentation, which can be found
+[here](https://github.com/jonathanlamar/vim-presentation).
 
 ## Inspiration
 
