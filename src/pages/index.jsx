@@ -35,7 +35,7 @@ const IndexPage = () => {
               My name is Jon. I am a software engineer and occasional data
               scientist. I did my PhD in math and try to keep at the cutting
               edge of mathy tech. This blog has some notes and examples of
-              things I find intersting.
+              things I find interesting.
             </span>
             <div className={style.list}>
               <ul>

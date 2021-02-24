@@ -164,7 +164,7 @@ them.
 ## Algebra of Types
 
 In scala, the set of all native types forms a category, where the objects are
-types and the morphisms are functions. In fact, this category is s _distributive
+types and the morphisms are functions. In fact, this category is a _distributive
 category_. That is, a category with products and coproducts which satisfy the
 following conditions:
 
@@ -278,8 +278,8 @@ object ContravariantHomFunctor
 If functors are the morphisms in the category of categories, then Natural
 Transformations are morphisms in the category of functors. So for every object
 `A`, we have a function `eta[A]: F[A] => G[A]`. There is a commutativity
-condition as well, so for `f: A => B`, we have
-`eta[B](F.fmap(f)(_)) = G.fmap(f)(eta[A](_))`.
+condition as well, so for any function `f: A => B`, it should be true that
+`eta[B].compose(F.fmap(f)) = G.fmap(f).compose(eta[A])`.
 
 ```scala
 trait NaturalTransformation[F[_], G[_]] {
