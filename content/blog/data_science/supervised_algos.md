@@ -2,8 +2,6 @@
 title: Supervised Machine Learning Models
 date: 2022-02-20
 image: svm.png
-author: Jon
-tags: ["machine learning"]
 ---
 
 Here is a list of quick, memorizable descriptions of various machine learning

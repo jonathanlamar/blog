@@ -2,8 +2,6 @@
 title: Stats 1 - Basic concepts
 date: 2021-02-13
 image: stats.png
-author: Jon
-tags: ["stats"]
 ---
 
 This begins a series of notes that I took while studying for a stats class in

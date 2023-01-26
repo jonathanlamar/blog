@@ -2,8 +2,6 @@
 title: Scala and Category Theory 1
 date: 2021-02-17
 image: cats.png
-author: Jon
-tags: ["scala", "category theory"]
 ---
 
 I'm interested in the more category-theoretic aspects of functional programming.

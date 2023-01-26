@@ -8,7 +8,7 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaStrava } from "react-icons/fa";
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -22,6 +22,7 @@ const Bio = () => {
           social {
             github
             linkedin
+            strava
           }
         }
       }
@@ -39,21 +40,40 @@ const Bio = () => {
         layout="fixed"
         formats={["auto", "webp", "avif"]}
         src="../images/profile-pic.png"
-        width={60}
-        height={60}
+        width={90}
+        height={90}
         quality={95}
         alt="Profile picture"
       />
-      <p>
-        Written by <strong>{author.name}</strong>: {author?.summary}
-      </p>
-      <div className="bio-social">
-        <a target="_blank" rel="nofollow noopener noreferrer" href={`https://github.com/${social?.github}`}>
-          <FaGithub color="#FFFFFF" size="30" />
-        </a>
-        <a target="_blank" rel="nofollow noopener noreferrer" href={`https://www.linkedin.com/in/${social.linkedin}`}>
-          <FaLinkedin color="#3077B0" size="30" />
-        </a>
+      <div className="bio-about">
+        <p>
+          Written by <strong>{author.name}</strong>: {author?.summary}
+        </p>
+        <div className="bio-social">
+          <div>
+            <a target="_blank" rel="nofollow noopener noreferrer" href={`https://github.com/${social?.github}`}>
+              <FaGithub color="#FFFFFF" size="30" />
+            </a>
+          </div>
+          <div>
+            <a
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              href={`https://www.linkedin.com/in/${social.linkedin}`}
+            >
+              <FaLinkedin color="#3077B0" size="30" />
+            </a>
+          </div>
+          <div>
+            <a
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              href={`https://www.strava.com/athletes/${social.strava}`}
+            >
+              <FaStrava color="#FC4800" size="30" />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );

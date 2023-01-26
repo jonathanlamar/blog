@@ -1,9 +1,7 @@
 ---
 title: Stats 3 - Hypothesis Testing I
-date: 2021-02-13
+date: 2021-02-15
 image: stats.png
-author: Jon
-tags: ["stats"]
 ---
 
 ## Statistical Experiments

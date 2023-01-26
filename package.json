@@ -8,6 +8,7 @@
     "@emotion/react": "^11.10.5",
     "@fontsource/merriweather": "^4.5.14",
     "@fontsource/montserrat": "^4.5.13",
+    "@theme-ui/preset-dark": "^0.15.4",
     "@theme-ui/preset-deep": "^0.15.4",
     "gatsby": "^5.4.2",
     "gatsby-plugin-feed": "^5.4.0",

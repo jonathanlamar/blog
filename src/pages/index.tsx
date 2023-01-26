@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby";
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
+import { StaticImage } from "gatsby-plugin-image";
 
 export interface BlogIndexProps {
   data: {
@@ -18,6 +19,7 @@ export interface BlogIndexProps {
           frontmatter: {
             title: string;
             date: string;
+            image: { publicURL: string };
             description: string;
           };
           fields: {
@@ -106,8 +108,11 @@ export const pageQuery = graphql`
           slug
         }
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
           title
+          date(formatString: "MMMM DD, YYYY")
+          image {
+            publicURL
+          }
           description
         }
       }

@@ -19,6 +19,7 @@ module.exports = {
     social: {
       github: `jonathanlamar`,
       linkedin: `jonathanplamar`,
+      strava: `jonathan_lamar`,
     },
   },
   plugins: [
@@ -126,13 +127,13 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/jl.png`, // This path is relative to the root of the site.
       },
     },
     {
       resolve: "gatsby-plugin-theme-ui",
       options: {
-        preset: "@theme-ui/preset-deep"
+        preset: "@theme-ui/preset-dark"
       }
     }
   ],

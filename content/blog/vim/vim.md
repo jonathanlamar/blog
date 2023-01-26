@@ -1,6 +1,6 @@
 ---
 title: Vim Presentation
-date: 2021-02-13
+date: 2020-06-05
 image: vim.png
 author: Jon
 tags: ["vim"]

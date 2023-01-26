@@ -288,13 +288,19 @@ a:focus {
   border-radius: 100%;
 }
 
-.bio-social {
+.bio-about {
   display: flex;
   flex-direction: column;
-  margin-left: var(--spacing-4);
   margin-bottom: var(--spacing-0);
-  min-width: 50px;
-  border-radius: 100%;
+}
+
+.bio-social {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: var(--spacing-4);
+  margin-right: var(--spacing-4);
+  margin-bottom: var(--spacing-0);
 }
 
 .blog-post header h1 {
