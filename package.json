@@ -5,13 +5,16 @@
   "version": "0.1.0",
   "author": "Jon Lamar <jonathan.p.lamar@gmail.com>",
   "dependencies": {
+    "@emotion/react": "^11.10.5",
     "@fontsource/merriweather": "^4.5.14",
     "@fontsource/montserrat": "^4.5.13",
+    "@theme-ui/preset-deep": "^0.15.4",
     "gatsby": "^5.4.2",
     "gatsby-plugin-feed": "^5.4.0",
     "gatsby-plugin-image": "^3.4.0",
     "gatsby-plugin-manifest": "^5.4.0",
     "gatsby-plugin-sharp": "^5.4.0",
+    "gatsby-plugin-theme-ui": "^0.15.4",
     "gatsby-remark-images": "^7.4.0",
     "gatsby-remark-katex": "^7.5.0",
     "gatsby-remark-prismjs": "^7.4.0",
@@ -23,7 +26,8 @@
     "prismjs": "^1.29.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-icons": "^4.7.1"
+    "react-icons": "^4.7.1",
+    "theme-ui": "^0.15.4"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
