@@ -38,6 +38,24 @@ const BlogIndex = (props: BlogIndexProps) => {
   return (
     <Layout location={props.location} title={siteTitle}>
       <Bio />
+      <div>
+        <p>
+          My name is Jon. Until recent layoffs affected my team, I was a machine learning engineer at Amazon Go. I did
+          my PhD in math and try to keep at the cutting edge of mathematically interesting tech. This blog has some
+          notes and examples of things I find interesting.
+        </p>
+        <p>
+          <a
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            href={"https://docs.google.com/document/d/1HRPhJzLCK69-h0tc22iNU4CZwHQK8tO6HE9-17IMY54/edit?usp=sharing"}
+          >
+            Here is my resume{" "}
+          </a>
+          if you are interested in my background or want to hire me.
+        </p>
+      </div>
+      <h2>Posts</h2>
       <ol style={{ listStyle: `none` }}>
         {posts.map((post) => {
           const title = post.frontmatter.title || post.fields.slug;
