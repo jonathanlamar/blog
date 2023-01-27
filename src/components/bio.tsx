@@ -35,16 +35,16 @@ const Bio = () => {
 
   return (
     <div className="bio">
-      <StaticImage
-        className="bio-avatar"
-        layout="fixed"
-        formats={["auto", "webp", "avif"]}
-        src="../images/profile-pic.PNG"
-        width={90}
-        height={90}
-        quality={95}
-        alt="Profile picture"
-      />
+      {/* <StaticImage */}
+      {/*   className="bio-avatar" */}
+      {/*   layout="fixed" */}
+      {/*   formats={["auto", "webp", "avif"]} */}
+      {/*   src="../images/profile-pic.PNG" */}
+      {/*   width={90} */}
+      {/*   height={90} */}
+      {/*   quality={95} */}
+      {/*   alt="Profile picture" */}
+      {/* /> */}
       <div className="bio-about">
         <p>
           Written by <strong>{author.name}</strong>: {author?.summary}
