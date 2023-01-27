@@ -1,22 +1,30 @@
 import * as React from "react";
 import { Link, graphql } from "gatsby";
 import "katex/dist/katex.min.css";
+import Img, { FluidObject } from "gatsby-image";
 
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 
+// TODO: I shouldn't have to redeclare types over and over again.
 interface BlogPost {
+  id: string;
+  excerpt: string;
+  html: string;
   frontmatter: {
     title: string;
     date: string;
     description?: string;
+    image: {
+      childImageSharp: {
+        fluid: FluidObject;
+      };
+    };
   };
   fields: {
     slug: string;
   };
-  excerpt: string;
-  html: string;
 }
 
 interface Site {
@@ -41,6 +49,7 @@ const BlogPostTemplate = (props: BlogPostTemplateProps) => {
     <Layout location={props.location} title={siteTitle}>
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
         <header>
+          <Img fluid={props.data.markdownRemark.frontmatter.image.childImageSharp.fluid} alt={siteTitle} />
           <h1 itemProp="headline">{props.data.markdownRemark.frontmatter.title}</h1>
           <p>{props.data.markdownRemark.frontmatter.date}</p>
         </header>
@@ -112,6 +121,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
