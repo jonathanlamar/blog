@@ -1,6 +1,6 @@
 ---
 title: Snake Genetic Model
-date: 2021-02-14
+date: 2020-02-14
 image: snake.png
 ---
 

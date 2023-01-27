@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Link, graphql } from "gatsby";
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 
 import Bio from "../components/bio";
 import Layout from "../components/layout";
@@ -18,7 +19,11 @@ export interface BlogIndexProps {
           frontmatter: {
             title: string;
             date: string;
-            image: { publicURL: string };
+            image: {
+              childImageSharp: {
+                gatsbyImageData: IGatsbyImageData;
+              };
+            };
             description: string;
           };
           fields: {
@@ -73,6 +78,7 @@ const BlogIndex = (props: BlogIndexProps) => {
                   <small>{post.frontmatter.date}</small>
                 </header>
                 <section>
+                  <GatsbyImage image={post.frontmatter.image.childImageSharp.gatsbyImageData} alt={title} />
                   <p
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.excerpt,
@@ -110,7 +116,9 @@ export const pageQuery = graphql`
           title
           date(formatString: "MMMM DD, YYYY")
           image {
-            publicURL
+            childImageSharp {
+              gatsbyImageData(width: 200)
+            }
           }
           description
         }
