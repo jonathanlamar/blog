@@ -133,8 +133,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-theme-ui",
       options: {
-        preset: "@theme-ui/preset-dark"
-      }
-    }
+        preset: "@theme-ui/preset-dark",
+      },
+    },
   ],
 };
