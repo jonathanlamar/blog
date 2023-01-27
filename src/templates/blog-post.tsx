@@ -5,7 +5,7 @@ import "katex/dist/katex.min.css";
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 
 // TODO: I shouldn't have to redeclare types over and over again.
 interface BlogPost {
@@ -18,7 +18,7 @@ interface BlogPost {
     description?: string;
     image: {
       childImageSharp: {
-        gatsbyImageData: any;
+        gatsbyImageData: IGatsbyImageData;
       };
     };
   };
