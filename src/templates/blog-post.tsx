@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Link, graphql } from "gatsby";
 import "katex/dist/katex.min.css";
-import Img, { FluidObject } from "gatsby-image";
 
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 // TODO: I shouldn't have to redeclare types over and over again.
 interface BlogPost {
@@ -18,7 +18,7 @@ interface BlogPost {
     description?: string;
     image: {
       childImageSharp: {
-        fluid: FluidObject;
+        gatsbyImageData: any;
       };
     };
   };
@@ -49,7 +49,10 @@ const BlogPostTemplate = (props: BlogPostTemplateProps) => {
     <Layout location={props.location} title={siteTitle}>
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
         <header>
-          <Img fluid={props.data.markdownRemark.frontmatter.image.childImageSharp.fluid} alt={siteTitle} />
+          <GatsbyImage
+            image={props.data.markdownRemark.frontmatter.image.childImageSharp.gatsbyImageData}
+            alt={siteTitle}
+          />
           <h1 itemProp="headline">{props.data.markdownRemark.frontmatter.title}</h1>
           <p>{props.data.markdownRemark.frontmatter.date}</p>
         </header>
@@ -123,9 +126,7 @@ export const pageQuery = graphql`
         description
         image {
           childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }
