@@ -1,6 +1,5 @@
 import * as React from "react";
 import { graphql, Link } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
 
 import Bio from "../components/bio";
 import Layout from "../components/layout";
@@ -55,7 +54,6 @@ const BlogIndex = (props: BlogIndexProps) => {
                   <small>{post.frontmatter.date}</small>
                 </header>
                 <section>
-                  <GatsbyImage image={post.frontmatter.image.childImageSharp.gatsbyImageData} alt={title} />
                   <p
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.excerpt,
