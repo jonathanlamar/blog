@@ -1,44 +1,21 @@
 import * as React from "react";
-import { Link, graphql } from "gatsby";
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
+import { graphql, Link } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
+import { querySiteMetadata } from "../queries/siteMetadata";
+import { AllBlogPosts } from "../queries/postTypes";
 
 export interface BlogIndexProps {
-  data: {
-    site: {
-      siteMetadata?: {
-        title: string;
-      };
-    };
-    allMarkdownRemark: {
-      nodes: [
-        {
-          frontmatter: {
-            title: string;
-            date: string;
-            image: {
-              childImageSharp: {
-                gatsbyImageData: IGatsbyImageData;
-              };
-            };
-            description: string;
-          };
-          fields: {
-            slug: string;
-          };
-          excerpt: string;
-        }
-      ];
-    };
-  };
+  data: { allMarkdownRemark: AllBlogPosts };
   location: { pathname: string };
 }
 
 const BlogIndex = (props: BlogIndexProps) => {
-  const siteTitle = props.data.site.siteMetadata?.title || `Title`;
+  const siteMetadata = querySiteMetadata();
+  const siteTitle = siteMetadata.title;
   const posts = props.data.allMarkdownRemark.nodes;
 
   return (
@@ -101,11 +78,6 @@ export const Head = () => <Seo title="All posts" />;
 
 export const pageQuery = graphql`
   {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       nodes {
         excerpt

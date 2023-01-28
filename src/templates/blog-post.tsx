@@ -5,45 +5,21 @@ import "katex/dist/katex.min.css";
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
-
-// TODO: I shouldn't have to redeclare types over and over again.
-interface BlogPost {
-  id: string;
-  excerpt: string;
-  html: string;
-  frontmatter: {
-    title: string;
-    date: string;
-    description?: string;
-    image: {
-      childImageSharp: {
-        gatsbyImageData: IGatsbyImageData;
-      };
-    };
-  };
-  fields: {
-    slug: string;
-  };
-}
-
-interface Site {
-  siteMetadata?: {
-    title: string;
-  };
-}
+import { GatsbyImage } from "gatsby-plugin-image";
+import { BlogPost } from "../queries/postTypes";
+import { querySiteMetadata } from "../queries/siteMetadata";
 
 interface BlogPostTemplateProps {
   data: {
     previous: BlogPost;
     next: BlogPost;
-    site: Site;
     markdownRemark: BlogPost;
   };
   location: { pathname: string };
 }
 const BlogPostTemplate = (props: BlogPostTemplateProps) => {
-  const siteTitle = props.data.site.siteMetadata?.title || `Title`;
+  const siteMetadata = querySiteMetadata();
+  const siteTitle = siteMetadata.title;
 
   return (
     <Layout location={props.location} title={siteTitle}>
@@ -111,11 +87,6 @@ export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($id: String!, $previousPostId: String, $nextPostId: String) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     markdownRemark(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)

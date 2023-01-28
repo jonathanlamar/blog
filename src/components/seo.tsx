@@ -6,7 +6,7 @@
  */
 
 import * as React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import { querySiteMetadata } from "../queries/siteMetadata";
 
 interface SeoProps {
   title: string;
@@ -15,24 +15,10 @@ interface SeoProps {
 }
 
 const Seo = (props: SeoProps) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            social {
-              twitter
-            }
-          }
-        }
-      }
-    `
-  );
+  const siteMetadata = querySiteMetadata();
 
-  const metaDescription = props.description || site.siteMetadata.description;
-  const defaultTitle = site.siteMetadata?.title;
+  const metaDescription = props.description || siteMetadata.description;
+  const defaultTitle = siteMetadata.title;
 
   return (
     <>
@@ -42,7 +28,7 @@ const Seo = (props: SeoProps) => {
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary" />
-      <meta name="twitter:creator" content={site.siteMetadata?.social?.github || ``} />
+      <meta name="twitter:creator" content={siteMetadata.social.github} />
       <meta name="twitter:title" content={props.title} />
       <meta name="twitter:description" content={metaDescription} />
       {props.children}

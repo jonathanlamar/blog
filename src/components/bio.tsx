@@ -6,32 +6,14 @@
  */
 
 import * as React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { FaGithub, FaLinkedin, FaStrava } from "react-icons/fa";
+import { querySiteMetadata } from "../queries/siteMetadata";
 
 const Bio = () => {
-  const data = useStaticQuery(graphql`
-    query BioQuery {
-      site {
-        siteMetadata {
-          author {
-            name
-            summary
-          }
-          social {
-            github
-            linkedin
-            strava
-          }
-        }
-      }
-    }
-  `);
-
-  // Set these values by editing "siteMetadata" in gatsby-config.js
-  const author = data.site.siteMetadata.author;
-  const social = data.site.siteMetadata.social;
+  const siteMetadata = querySiteMetadata();
+  const author = siteMetadata.author;
+  const social = siteMetadata.social;
 
   return (
     <div className="bio">
