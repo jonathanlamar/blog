@@ -20,7 +20,7 @@ definitions however.
 
 In a single sentence, it is goal-directed learning through trial and error.
 
-How does it differ from supervised learning? Rather then a machine being shown
+How does it differ from supervised learning? Rather than a machine being shown
 what to do, the machine is given a feedback signal in the form of a reward.
 Thus an agent learns by exploring actions and their associated rewards, and by
 modeling the expected long term reward for actions given states. The notions of
