@@ -1,5 +1,5 @@
 ---
-title: Notes on Reinforcement Learning 3
+title: Notes on Reinforcement Learning 4
 descriptions: Notes from the first chapter of Sutton and Barto's RL book
 date: 2024-04-17
 image: rl.png
