@@ -22,7 +22,7 @@ const BlogIndex = (props: BlogIndexProps) => {
       <Bio />
       <div>
         <p>
-          My name is Jon. Until recent layoffs affected my team, I was a machine learning engineer at Amazon Go. I did
+          My name is Jon. I am a machine learning engineer currently looking for the next opportunity.  I did
           my PhD in math and try to keep at the cutting edge of mathematically interesting tech. This blog has some
           notes and examples of things I find interesting.
         </p>
