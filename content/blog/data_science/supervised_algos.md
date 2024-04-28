@@ -256,20 +256,14 @@ As outlined above, gradient boosting works by training a sequence of decision
 trees $f_m(x)$ and expressing the final prediction as a sum
 
 $$
-F_n(x) = \sum_{i=1}^nf_i(x).
+F_n(x) = \sum_{i=0}^n\lambda^if_i(x),
 $$
 
-The way this works is by training each decision tree sequentially, using labels
-representing the error in prediction of the previous iteration of the model,
-noting that
-
-$$
-F_n(x) = F_{n-1}(x) + f_n(x),
-$$
-
-Thus, if $y$ is the true label for a particular value of $x$, then
-
-**TODO:** Understand classification from a probabilistic perspective first.
+where $\lambda\in(0,1)$ is a discount factor. The first tree $F_0 = f_0$ is trained to predict the true value $y$
+(whether this is a categorical or continuous random variable is immaterial in this discussion).  Subsequently, the $i$th
+tree $f_i$ is trained to predict the error $L(y, F_{i-1})$.  If this is a classification tree, then $L$ is crossentropy
+error and its value is either 0 or 1.  If this is a regression tree, then $L$ is root mean squared error and its value
+is the target of the regression tree.
 
 ## K Nearest Neighbors
 
