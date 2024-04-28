@@ -214,16 +214,15 @@ $$
 **Proof** Write $\ell_i(\theta) = \log f_\theta(X_i)$. We start with a couple
 of observations:
 
-1. Since $\hat{\theta}$ is the unique maximizer of $\log(L_n(X_1,X_2,
-\ldots,X_n; \theta))$,
+1. Since $\hat{\theta}$ is the unique maximizer of $\log(L_n(X_1,X_2, \ldots,X_n; \theta))$,
 
 $$
 \frac{d}{d\theta}\bigg\lvert_{\theta=\hat{\theta}}\sum_{i=1}^n\ell_i
 = \sum_{i=1}^n\ell_i(\hat{\theta}) = 0.
 $$
 
-2. Since $\theta^\ast$ is the unique minimizer of $KL(\mathbb{P}_\theta,
-\mathbb{P})$ and this differs from $E(\ell(\theta))$ by a constant, we have
+2. Since $\theta^\ast$ is the unique minimizer of $KL(\mathbb{P}_\theta, \mathbb{P})$ 
+and this differs from $E(\ell(\theta))$ by a constant, we have
 
 $$
 E(\ell'(\theta^\ast))
@@ -253,8 +252,8 @@ $$
 $$
 
 By CLT, the term on the left converges to $N(0, I(\theta^\ast))$. By LLN, the
-term $n^{-1}\sum_i\ell''_i(\theta^\ast)$ converges to $E(\ell''(\theta^\ast)) =
--I(\theta^\ast)$. Therefore, rearranging, we have
+term $n^{-1}\sum_i\ell''_i(\theta^\ast)$ converges to $E(\ell''(\theta^\ast)) = -I(\theta^\ast)$. 
+Therefore, rearranging, we have
 
 $$
 I(\theta^\ast)\cdot\sqrt{n}(\hat{\theta} - \theta^\ast) \overset{(d)}{\to} N(0,I(\theta^\ast)),
