@@ -1,6 +1,6 @@
 ---
 title: Metrics for Evaluating Recommender Systems
-date: 2024-05-1
+date: 2024-05-01
 image: svd.png
 ---
 
